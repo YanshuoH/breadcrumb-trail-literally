@@ -2,11 +2,21 @@ var breadcrumbTrail = require('../index');
 var expect = require('chai').expect;
 
 var relativeResultFixture = [
-  '.force',
-  'obi-wan/.force',
-  'anakin/.force',
-  'anakin/luke/.force',
-  'anakin/leia/kylo/.force',
+  [
+    '.force',
+    'obi-wan/.force',
+    'anakin/.force',
+    'anakin/luke/.force',
+    'anakin/leia/kylo/.force',
+  ],
+  [
+    '.force',
+    'obi-wan/.force',
+    'anakin/.force',
+    'anakin/luke/.force',
+    'anakin/leia/kylo/.force',
+    'organa/.no-force',
+  ],
 ];
 
 var baseDir = 'example';
@@ -36,7 +46,20 @@ describe('#breadcrumbTrail', function() {
       baseDir: baseDir,
       validate: '.force',
     }, function(err, results) {
-      expect(results.sort()).to.eql(relativeResultFixture.sort());
+      expect(results.sort()).to.eql(relativeResultFixture[0].sort());
+      next();
+    });
+  });
+
+  it('should return an array of relative paths if validate is a function', function(next) {
+    breadcrumbTrail.map({
+      baseDir: baseDir,
+      validate: function(filename) {
+        var n = filename.search(/^\.(no-)?force/i);
+        return n > -1;
+      },
+    }, function(err, results) {
+      expect(results.sort()).to.eql(relativeResultFixture[1].sort());
       next();
     });
   });
