@@ -25,6 +25,14 @@ var absoluteBaseDir = path.resolve(baseDir);
 var absoluteResultFixture = getAbsoluteResultFixtureFromRelative(relativeResultFixture);
 
 describe('#breadcrumbTrail', function() {
+  it('should throw an exception if options is not defined', function() {
+    try {
+      breadcrumbTrail(undefined, function(err, results) {});
+    } catch (e) {
+      expect(e).to.be.an.instanceof(Error);
+    }
+  });
+
   it('should throw an exception if mandatory fields of option undefined', function() {
     try {
       breadcrumbTrail.map({}, function(err, results) {});
