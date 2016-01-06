@@ -2,7 +2,11 @@
   "name": "breadcrumb-trail-literally",
   "version": "1.0.0",
   "description": "A literally breacrumb trail fairy tale. Take slices of bread (specific files), leave them in the file system, and you will get a map for home",
-  "main": "lib/index.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YanshuoH/breadcrumb-trail-literally.git"
+  },
   "directories": {
     "test": "test"
   },
@@ -20,6 +24,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "grunt": "^0.4.5",
+    "grunt-coveralls": "^1.0.0",
     "grunt-mocha-istanbul": "^3.0.1",
     "istanbul": "^0.4.1",
     "load-grunt-tasks": "^3.4.0",

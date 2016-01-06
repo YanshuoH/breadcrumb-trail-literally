@@ -9,8 +9,8 @@ module.exports = function(grunt) {
         options: {
           coverageFolder: 'reports/coverage',
           reportFormats: [
-            'cobertura',
             'html',
+            'lcov'
           ],
         },
       },
@@ -26,10 +26,13 @@ module.exports = function(grunt) {
         },
       },
     },
+    coveralls: {
+      coverage: {
+        src: 'reports/coverage/lcov.info',
+      },
+    },
   });
 
   grunt.registerTask('coverage', ['mocha_istanbul']);
-  grunt.registerTask('build', function() {
-    // do nothing
-  });
+  grunt.registerTask('build', ['mocha_istanbul', 'coveralls:coverage']);
 }
