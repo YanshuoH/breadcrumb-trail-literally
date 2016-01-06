@@ -27,12 +27,13 @@ module.exports = function(grunt) {
       },
     },
     coveralls: {
-      coverage: {
+      options: {
         src: 'reports/coverage/lcov.info',
+        force: false,
       },
     },
   });
 
   grunt.registerTask('coverage', ['mocha_istanbul']);
-  grunt.registerTask('build', ['mocha_istanbul', 'coveralls:coverage']);
+  grunt.registerTask('build', ['mocha_istanbul', 'coveralls']);
 }
