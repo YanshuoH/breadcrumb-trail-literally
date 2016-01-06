@@ -4,6 +4,9 @@ A literally breadcrumb trail fairy tale. Take some breadcrumbs (specific files) 
 [![Build Status](https://travis-ci.org/YanshuoH/breadcrumb-trail-literally.svg?branch=master)](https://travis-ci.org/YanshuoH/breadcrumb-trail-literally)
 [![Coverage Status](https://coveralls.io/repos/YanshuoH/breadcrumb-trail-literally/badge.svg?branch=master&service=github)](https://coveralls.io/github/YanshuoH/breadcrumb-trail-literally?branch=master)
 
+## Install
+``` npm install --save breadcrumb-trail-literally ```
+
 ## Goal
 Sometimes we need to build a tree for some specific files through a filesystem(eg. RequireJS)
 
