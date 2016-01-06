@@ -35,5 +35,5 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('coverage', ['mocha_istanbul']);
-  grunt.registerTask('build', ['mocha_istanbul', 'coveralls']);
+  grunt.registerTask('default', ['coverage', 'coveralls']);
 }
