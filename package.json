@@ -1,7 +1,7 @@
 {
   "name": "breadcrumb-trail-literally",
   "version": "1.0.0",
-  "description": "A literally breacrumb trail fairy tale. Take slices of bread (specific files), leave them in the file system, and you will get a map for home",
+  "description": "A literally breadcrumb trail fairy tale. Take slices of bread (specific files), leave them in the file system, and you will get a map for home",
   "main": "index.js",
   "repository": {
     "type": "git",
